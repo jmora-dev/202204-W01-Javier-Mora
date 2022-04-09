@@ -1,0 +1,312 @@
+:root {
+  --cells-size: 10vw;
+}
+
+.d-none {
+  display: none;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.flex-direction-column {
+  flex-direction: column;
+}
+
+.flex-grow-1 {
+  flex-grow: 1;
+}
+
+.flex-center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.game-body {
+  background-color: rgb(39, 44, 88);
+  font-family: "Fredoka", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+.main-container{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.game-board {
+  max-width: calc(80vh * 9 / 8);
+  max-height: calc(80vh);
+  width: calc(var(--cells-size) * 9);
+  height: calc(var(--cells-size) * 8);
+  display: grid;
+  grid-template-columns: 1fr 7fr 1fr;
+  grid-template-rows: 1fr 6fr 1fr;
+}
+
+.game-board .horizontal-section {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.game-board .vertical-section {
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+}
+
+.game-board .game-panel {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+}
+
+.game-board .cell {
+  position: relative;
+}
+
+.game-board .cell > div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.button-insert-token {
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+
+.button-insert-token > div {
+  width: 100%;
+  position: absolute;
+  top: 0;
+}
+
+.button-insert-token .no-focus {
+  display: block;
+}
+
+.button-insert-token .focus {
+  display: none;
+}
+
+.button-insert-token:hover .no-focus {
+  display: none;
+}
+
+.button-insert-token:hover .focus {
+  display: block;
+}
+
+.token.red,
+.button-insert-token .red {
+  fill: rgb(228, 45, 45);
+}
+
+.token.yellow,
+.button-insert-token .yellow {
+  fill: rgb(238, 235, 42);
+}
+
+.game-board.blue use[class="board-color"] {
+  fill: #68ff75;
+}
+
+
+.title {
+  font-size: 8rem;
+  color: #fff;
+  text-shadow: 0 0 5px #000;
+}
+
+.turn-panel {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.turn-panel.red {
+  text-shadow: 0 0 5px #000;
+  color: #fff;
+  background: rgba(193, 24, 24, 1);
+  background: linear-gradient(
+    90deg,
+    rgba(152, 35, 35, 1) 0%,
+    rgba(193, 24, 24, 1) 50%,
+    rgba(152, 35, 35, 1) 100%
+  );
+  border-bottom: 2px solid rgb(100, 30, 30);
+}
+
+.turn-panel.yellow {
+  text-shadow: 0 0 5px #000;
+  color: #fff;
+  background: rgb(241, 238, 28);
+  background: linear-gradient(
+    90deg,
+    rgb(206, 203, 48) 0%,
+    rgb(247, 243, 17) 50%,
+    rgb(206, 203, 48) 100%
+  );
+  border-bottom: 2px solid rgb(187, 185, 43);
+}
+
+.turn-panel.draw{
+  background-color: #333;
+  color: #fff;
+  border-bottom: 2px solid #222;
+}
+
+.turn-panel .crown-container {
+  width: 6rem;
+  position: relative;
+}
+
+.turn-panel .crown-container > svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.nav-buttons-panel {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.nav-button {
+  cursor: pointer;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  padding: 0.5rem;
+  border: 2px solid #eee;
+  fill: #eee;
+  background-color: #25bd20;
+}
+
+.nav-button:hover,
+.nav-button:focus{
+  background-color: #21f119;
+  border: 2px solid #fff;
+  fill: #fff;
+}
+
+.play-button {
+  cursor: pointer;
+  font-family: "Fredoka", sans-serif;
+  font-size: 3rem;
+  max-width: 50rem;
+  width: 100%;
+  padding: 2rem 3rem;
+  border: 0.5rem solid rgb(104, 33, 33);
+  border-radius: 2rem;
+  background: rgb(196, 26, 26);
+  color: #fff;
+  text-shadow: 0px 0px 0.5rem rgba(0, 0, 0, 1);
+}
+
+.play-button:hover,
+.play-button:focus{
+  background: rgb(230, 23, 23);
+  transform: scale(1.1);
+}
+
+.player-cards-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap:2rem;
+  margin-top: 2.5rem;
+}
+
+.player-card {
+  position: relative;
+  border-radius: 1rem;
+  background-color: #ddd;
+  padding: 4rem 2rem 2rem 2rem;
+  text-align: center;
+}
+
+.player-card .token-container{
+  position: absolute;
+  top: -5rem;
+  left: 10%;
+  width: 80%;
+  transform: rotate(180deg);
+}
+
+.player-card .player-name{
+  font-size: 1.5rem;
+  margin: 0.2rem 0 0.5rem 0;
+}
+
+.player-card .player-type-container{
+  display: flex;
+}
+
+.player-card .player-type-container > button{
+  font-family: "Fredoka", sans-serif;
+  cursor: pointer;
+  flex-grow: 1;
+  margin:0;
+  padding:0.5rem;
+  border-radius:0;
+  border-color: #555;
+  color: #555;
+  background-color: #888;
+}
+
+.player-card .player-type-container > button:hover,
+.player-card .player-type-container > button:focus{
+  border-color: #555;
+  color: #555;
+  background-color: #bbb;
+}
+
+.player-card .player-type-container > button:first-child{
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  padding-left: 0.6rem;
+}
+
+.player-card .player-type-container > button:last-child{
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  padding-right: 0.6rem;
+  border-left: 0;
+}
+
+.player-card .player-type-container > button.enabled{
+  border-color: #333;
+  color: #333;
+  background-color: rgb(163, 240, 119);
+}
+
+.text-borders{
+  text-shadow: 0 0 5px #000;
+  color: #fff;
+}
