@@ -152,7 +152,7 @@ const getPaintWinnerPlayer = (player) => {
     let html = `
     <div class="d-flex">
       <div class="crown-container"><svg viewBox="0 0 50 30"><use href="#crown" x="0" y="-10" /></svg></div>
-      <div>${player.name.toUpperCase()} WIN !!!</div>
+      <div>${player.name.toUpperCase()} WINS !!!</div>
       <div class="crown-container"><svg viewBox="0 0 50 30"><use href="#crown" x="0" y="-10" /></svg></div>
     </div>`;
     return html;
