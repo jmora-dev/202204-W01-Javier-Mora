@@ -148,6 +148,12 @@
     margin-bottom: 2rem;
 }
 
+@media (max-width: 750px) {
+    .turn-panel {
+        font-size: 2rem;
+    }
+}
+
 .turn-panel.red {
     text-shadow: 0 0 5px #000;
     color: #fff;
@@ -185,6 +191,12 @@
     position: relative;
 }
 
+@media (max-width: 750px) {
+    .turn-panel .crown-container {
+        width: 4rem;
+    }
+}
+
 .turn-panel .crown-container > svg {
     position: absolute;
     top: 0;
@@ -200,6 +212,25 @@
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
+}
+
+@media (max-width: 750px) {
+    .nav-buttons-panel {
+        display: none;
+    }
+}
+
+.nav-buttons-panel-small-device {
+    display: none;
+}
+
+@media (max-width: 750px) {
+    .nav-buttons-panel-small-device {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+    }
 }
 
 .nav-button {
@@ -309,9 +340,4 @@
     border-color: #333;
     color: #333;
     background-color: rgb(163, 240, 119);
-}
-
-.text-borders {
-    text-shadow: 0 0 5px #000;
-    color: #fff;
 }
