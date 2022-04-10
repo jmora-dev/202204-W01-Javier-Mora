@@ -131,6 +131,12 @@
     text-shadow: 0 0 5px #000;
 }
 
+@media (max-width: 750px) {
+    .title {
+        font-size: 5rem;
+    }
+}
+
 .turn-panel {
     width: 100%;
     display: flex;
