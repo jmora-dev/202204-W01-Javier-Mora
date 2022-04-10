@@ -33,6 +33,19 @@
     font-family: "Fredoka", sans-serif;
     padding: 0;
     margin: 0;
+    background-image: url("./bg_star.svg");
+    background-repeat: repeat;
+    background-size: 20vw;
+    animation: scroll 10s linear infinite;
+}
+
+@keyframes scroll {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: -20vw 20vw;
+    }
 }
 
 .main-container {
